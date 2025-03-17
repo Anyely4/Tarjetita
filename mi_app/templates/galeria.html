@@ -1,0 +1,286 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Mi Amor</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #e6ffff, #b6e4ff, #e6ffff);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1900px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        /* Estilos del encabezado */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            color: #40b9ff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::before, h1::after {
+            content: "❤️";
+            position: absolute;
+            top: 0;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        h1::before {
+            left: -40px;
+            animation-delay: 0.5s;
+        }
+        
+        h1::after {
+            right: -40px;
+            animation-delay: 1s;
+        }
+        
+        /* Galería de fotos */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            width: 45%;
+            max-width: 400px;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            filter: brightness(50%);
+        }
+        
+        .message {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            color: white;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item:hover .message {
+            opacity: 1;
+        }
+        
+        .message h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .message p {
+            font-size: 1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #ff4081;
+            animation: pulse 1.5s infinite;
+        }
+        
+        /* Decoración */
+        .heart {
+            position: absolute;
+            font-size: 1.5rem;
+            color: #ff4081;
+            animation: float 6s ease-in-out infinite;
+            z-index: -1;
+            opacity: 0.6;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: 100%;
+                height: 250px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h1::before, h1::after {
+                font-size: 1.5rem;
+            }
+            
+            h1::before {
+                left: -30px;
+            }
+            
+            h1::after {
+                right: -30px;
+            }
+        }
+        
+        /* Animaciones */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>¡Feliz Cumpleaños Mi Amor!</h1>
+        </header>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <img class="logotipo" src="{% static 'img/foto1.jpeg' %}" alt="Descripción de la imagen">
+                <div class="message">
+                    <div class="icon">💖</div>
+                    <h3>Nuestro Primer Encuentro</h3>
+                    <p>Desde ese día que te conocí, supe que eras especial. Cada momento contigo es un regalo.</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img class="logotipo" src="{% static 'img/foto2.jpg' %}" alt="Descripción de la imagen">
+                <div class="message">
+                    <div class="icon">✨</div>
+                    <h3>Aventuras Juntos</h3>
+                    <p>Contigo cada día es una nueva aventura. Gracias por hacerme sonreír siempre.</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img class="logotipo" src="{% static 'img/foto3.webp' %}" alt="Descripción de la imagen">
+                <div class="message">
+                    <div class="icon">💕</div>
+                    <h3>Momentos Especiales</h3>
+                    <p>Los pequeños momentos contigo se convierten en los recuerdos más preciosos de mi vida.</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img class="logotipo" src="{% static 'img/foto4.jpg' %}" alt="Descripción de la imagen">
+                <div class="message">
+                    <div class="icon">🎁</div>
+                    <h3>Por Muchos Más</h3>
+                    <p>Espero seguir celebrando muchos más cumpleaños juntos. Te amo infinitamente.</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="{% url 'carta' %}" class="boton1">
+            Ver mas!
+        </a> 
+    </div>
+    
+    <!-- Decoración de corazones flotantes -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Crear corazones decorativos
+            const createHearts = () => {
+                const heartSymbols = ['❤️', '💕', '💖', '💗', '💘'];
+                const container = document.querySelector('.container');
+                
+                for (let i = 0; i < 15; i++) {
+                    const heart = document.createElement('div');
+                    heart.classList.add('heart');
+                    heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                    
+                    // Posición aleatoria
+                    const left = Math.random() * 100;
+                    const top = Math.random() * 100;
+                    heart.style.left = `${left}%`;
+                    heart.style.top = `${top}%`;
+                    
+                    // Animación aleatoria
+                    const duration = 5 + Math.random() * 10;
+                    const delay = Math.random() * 5;
+                    heart.style.animationDuration = `${duration}s`;
+                    heart.style.animationDelay = `${delay}s`;
+                    
+                    container.appendChild(heart);
+                }
+            };
+            
+            createHearts();
+            
+            // Reemplazar las imágenes con tus fotos reales
+            // Esto es un ejemplo - deberás reemplazar estas URLs con las tuyas
+            // const images = [
+            //     'url_a_tu_foto_1.jpg',
+            //     'url_a_tu_foto_2.jpg',
+            //     'url_a_tu_foto_3.jpg',
+            //     'url_a_tu_foto_4.jpg'
+            // ];
+            
+            // document.querySelectorAll('.gallery-item img').forEach((img, index) => {
+            //     if (images[index]) {
+            //         img.src = images[index];
+            //     }
+            // });
+        });
+    </script>
+</body>
+</html>

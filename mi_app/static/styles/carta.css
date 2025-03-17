@@ -1,0 +1,305 @@
+body {
+    font-family:'Times New Roman', Times, serif;
+    background: linear-gradient(135deg, #ddebf3 0%, #b8dee0 100%);
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    height: 80vh;
+    perspective: 1500px; /* Aumentar la perspectiva para un efecto 3D más pronunciado */
+}
+
+.envelope {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #7ee1ff;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transition: transform 1.5s, opacity 1.5s; /* Añadir transición para la opacidad */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    will-change: transform, opacity; /* Optimizar para animaciones */
+}
+
+.envelope-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #679dc3;
+    border-radius: 10px;
+    transform-origin: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.envelope-heart {
+    font-size: 60px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #042647;
+    animation: heartBeat 1.5s infinite alternate;
+}
+
+.envelope-text {
+    position: absolute;
+    bottom: 20%;
+    text-align: center;
+}
+
+.letter {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background-color: #ffffff85;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateZ(-1px) scale(0.9);
+    opacity: 0;
+    transition: all 1s ease;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.letter-content {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.paragraph {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #333;
+    font-size: 18px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.special-text {
+    color: #40a6ff;
+    font-weight: bold;
+}
+
+.highlight {
+    background: linear-gradient(120deg, rgba(255, 224, 0, 0.4) 0%, rgba(255, 224, 0, 0) 100%);
+    padding: 0 5px;
+}
+
+.heart-icon {
+    display: inline-block;
+    color: #00b3ff;
+    animation: heartBeat 1.5s infinite alternate;
+    transform-origin: center;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    opacity: 0;
+    top: -10px;
+    z-index: 2;
+}
+
+.floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 20px;
+    color: #ff4081;
+    opacity: 0;
+    animation: float 10s linear infinite;
+}
+.logotipo{
+    width: 200px;
+    height: 150px;
+}
+@keyframes heartBeat {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-500px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.signature {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 32px;
+    color: #40a0ff;
+    margin-top: 40px;
+    text-align: right;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.next-button {
+    padding: 10px 20px;
+    background-color: #40afff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 3px 10px rgba(255, 64, 129, 0.3);
+    transition: all 0.3s ease;
+}
+
+.next-button:hover {
+    background-color: #77a4ff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 64, 129, 0.4);
+}
+
+.back-button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #2775b0;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 3px 10px rgba(156, 39, 176, 0.3);
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #ba68c8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(156, 39, 176, 0.4);
+}
+
+.photo-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.photo-placeholder {
+    width: 200px;
+    height: 150px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    font-size: 14px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.final-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s;
+    z-index: 10;
+}
+
+.final-message {
+    font-size: 36px;
+    color: #40acff;
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #40c9ff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(255, 64, 129, 0.3);
+    z-index: 5;
+    font-size: 20px;
+}
+
+.music-control:hover {
+    background-color: #ff77a9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 64, 129, 0.4);
+}
+
+.decoration {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0.2;
+    z-index: -1;
+}

@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Amor Animada</title>
+    <link rel="stylesheet" href="{% static 'styles/carta.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="envelope" id="envelope">
+            <div class="envelope-front">
+                <div class="envelope-heart">❤</div>
+                <div class="envelope-text">Haz clic a los lados para abrir</div>
+            </div>
+        </div>
+        <div class="letter" id="letter">
+            <div class="letter-content" id="letter-content">
+                <div class="paragraph" data-index="0">
+                    <span class="special-text">¡Feliz Cumpleaños mi amor!</span> Hoy, en este día tan especial, quiero dedicarte esta carta que 
+                    escribí con todo mi corazón. Cada palabra aquí refleja el amor inmenso que siento por ti.
+                </div>
+                
+                <div class="paragraph" data-index="1">
+                    ¿Recuerdas el día que nos conocimos? Fue como si el tiempo se detuviera. Desde ese momento supe que eras alguien especial, 
+                    alguien que cambiaría mi vida para siempre. <span class="highlight">Tu sonrisa iluminó mi mundo</span> y desde entonces, 
+                    no he podido dejar de pensar en ti.
+                </div>
+                
+                <div class="paragraph" data-index="2">
+                    Cada día a tu lado es una nueva aventura. Me encanta cómo ves el mundo, cómo ríes, cómo te emocionas con las pequeñas cosas. 
+                    Tu forma de ser es única y me enamora más cada día. <span class="heart-icon">❤</span>
+                </div>
+                
+                <div class="paragraph" data-index="3">
+                    Admiro tu fortaleza, tu perseverancia y tu bondad. Eres la persona más maravillosa que he conocido y me siento afortunada
+                     de compartir mi vida contigo. <span class="special-text">Agradezco al universo por haberte puesto en mi camino.</span>
+                </div>
+                
+                <div class="paragraph" data-index="4">
+                    Juntos hemos creado recuerdos increíbles: nuestro primer viaje juntos, aquellas noches de conversaciones interminables, 
+                    los momentos difíciles que superamos juntos, y tantas risas compartidas que han llenado nuestros días de felicidad.
+                </div>
+                
+                <div class="photo-container" data-index="5">
+                    <div class="photo-placeholder"><img class="logotipo" src="{% static 'img/foto4.jpg' %}" alt="Descripción de la imagen"></div>
+                </div>
+                
+                <div class="paragraph" data-index="6">
+                    En este día tan especial, quiero recordarte lo mucho que significas para mí. <span class="highlight">Tu cumpleaños es una celebración de tu existencia</span>, y yo celebro cada día que tengo la suerte de tenerte en mi vida.
+                </div>
+                
+                <div class="paragraph" data-index="7">
+                    Te prometo seguir amándote cada día más, apoyarte en tus sueños y estar siempre a tu lado. <span class="special-text">Eres mi presente y mi futuro</span>, y no puedo imaginar mi vida sin ti.
+                </div>
+                
+                <div class="paragraph" data-index="8">
+                    Este año que comienza para ti será maravilloso, lo sé. Estaré contigo en cada paso, celebrando tus victorias y sosteniéndote en los momentos difíciles. <span class="heart-icon">❤</span>
+                </div>
+                
+                <div class="paragraph" data-index="9">
+                    <span class="special-text">Feliz cumpleaños, mi amor.</span> Gracias por existir y por hacer de mi mundo un lugar mejor. Te amo hoy y siempre.
+                </div>
+                
+                <div class="signature" data-index="10">
+                    Con todo mi amor
+                </div>
+                
+                <div class="button-container" data-index="11">
+                    <button class="back-button" id="back-button" style="display: none;">Anterior</button>
+                    <button class="next-button" id="next-button">Siguiente</button>
+                </div>
+            </div>
+        </div>
+        <div class="floating-hearts" id="floating-hearts"></div>
+    </div>
+    
+    <div class="final-animation" id="final-animation">
+        <div class="final-message">¡Te amo con todo mi corazón!<br>Feliz Cumpleaños</div>
+    </div>
+    
+    <button class="music-control" id="music-control">♫</button>
+    
+    <audio id="background-music" loop>
+        <source src="/static/media/la-promesa.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="{% static 'js/carta.js' %}"></script>
+</body>
+</html>
